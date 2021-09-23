@@ -13,9 +13,7 @@ public class Driver {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "date_created" ,nullable = false, updatable = false)
-    @CreationTimestamp
-    private ZonedDateTime dateCreated;
+
     @Column(name = "name")
     private String name;
 
@@ -26,6 +24,10 @@ public class Driver {
             inverseJoinColumns = @JoinColumn(name = "car_id"))
     private Set<Car> cars;
 
+    @Column(name = "date_created" ,nullable = false, updatable = false)
+    @CreationTimestamp
+    private ZonedDateTime dateCreated;
+
     public Driver(Long id, ZonedDateTime dateCreated, String name, Set<Car> cars) {
         this.id = id;
         this.dateCreated = dateCreated;
@@ -35,6 +37,10 @@ public class Driver {
 
     public Driver() {
 
+    }
+
+    public Driver(String name) {
+        this.name = name;
     }
 
     public ZonedDateTime getDateCreated() {
