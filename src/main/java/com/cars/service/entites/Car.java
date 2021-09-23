@@ -33,7 +33,8 @@ public class Car   {
     @Column(name = "engine_type")
     private EngineType engineType;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "manufacturer_id",
             referencedColumnName = "id",
             nullable = false)
@@ -54,16 +55,16 @@ public class Car   {
     public Car(){
     }
 
-    public Car(Long id, String licensePlate, Integer seatCount, Boolean convertible,
-               Integer rating, EngineType engineType, Manufacturer manufacturer, Set<Driver> drivers) {
-        this.id = id;
+    public Car( String licensePlate, Integer seatCount, Boolean convertible,
+               Integer rating, EngineType engineType, Manufacturer manufacturer) {
+
         this.licensePlate = licensePlate;
         this.seatCount = seatCount;
         this.convertible = convertible;
         this.rating = rating;
         this.engineType = engineType;
         this.manufacturer = manufacturer;
-        this.drivers = drivers;
+
     }
 
     public Long getId() {

@@ -1,4 +1,4 @@
-package com.cars.service.repositories.manufacturers;
+package com.cars.service.repositories.drivers;
 
 import com.cars.service.entites.Driver;
 import org.springframework.data.jpa.repository.JpaRepository;

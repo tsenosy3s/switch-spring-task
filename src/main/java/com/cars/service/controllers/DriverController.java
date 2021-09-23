@@ -39,7 +39,7 @@ public class DriverController {
 
     @PutMapping(path = "/update/{id}")
     public ResponseEntity<Driver> putManufacturer(@PathVariable long id,@RequestBody DriverBody body) throws NotFoundException {
-        Driver manufacturer= driverService.update(id,body);
-        return ResponseEntity.ok(manufacturer);
+        Driver driver= driverService.update(id,body);
+        return ResponseEntity.ok(driver);
     }
 }
