@@ -1,16 +1,20 @@
 package com.cars.service.entites;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.*;
 import java.time.ZonedDateTime;
 import java.util.Set;
 
 @Entity
+@Table(name = "drivers")
 public class Driver {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "date_created")
+    @Column(name = "date_created" ,nullable = false, updatable = false)
+    @CreationTimestamp
     private ZonedDateTime dateCreated;
     @Column(name = "name")
     private String name;

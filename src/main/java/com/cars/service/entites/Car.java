@@ -1,12 +1,15 @@
 package com.cars.service.entites;
 
 import com.cars.service.entites.enums.EngineType;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.time.ZonedDateTime;
 import java.util.Set;
 
 
 @Entity
+@Table(name = "cars")
 public class Car   {
 
     @Id
@@ -21,6 +24,10 @@ public class Car   {
     private Boolean convertible;
     @Column(name = "rating")
     private Integer rating;
+
+    @Column(name = "date_created" ,nullable = false, updatable = false)
+    @CreationTimestamp
+    private ZonedDateTime dateCreated;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "engine_type")
