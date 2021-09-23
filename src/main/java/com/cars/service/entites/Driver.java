@@ -17,7 +17,7 @@ public class Driver {
     @Column(name = "name")
     private String name;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "driver_car",
             joinColumns = @JoinColumn(name = "driver_id"),

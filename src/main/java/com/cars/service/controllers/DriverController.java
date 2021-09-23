@@ -2,6 +2,7 @@ package com.cars.service.controllers;
 
 import com.cars.service.entites.Driver;
 import com.cars.service.models.drivers.DriverBody;
+import com.cars.service.models.drivers.DriverCarBody;
 import com.cars.service.services.drivers.IDriverService;
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,4 +43,15 @@ public class DriverController {
         Driver driver= driverService.update(id,body);
         return ResponseEntity.ok(driver);
     }
+    @PostMapping(path = "/select")
+    public ResponseEntity<Driver> selectCar(@RequestBody DriverCarBody body) throws NotFoundException {
+        Driver driver= driverService.select(body);
+        return ResponseEntity.ok(driver);
+    }
+    @PostMapping(path = "/deselect")
+    public ResponseEntity<Driver> deSelectCar(@RequestBody DriverCarBody body) throws NotFoundException {
+        Driver driver= driverService.deSelect(body);
+        return ResponseEntity.ok(driver);
+    }
+
 }

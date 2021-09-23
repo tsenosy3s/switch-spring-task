@@ -41,16 +41,7 @@ public class Car   {
     private Manufacturer manufacturer;
 
 
-    @ManyToMany (mappedBy = "cars")
-    private Set<Driver> drivers;
 
-    public Set<Driver> getDrivers() {
-        return drivers;
-    }
-
-    public void setDrivers(Set<Driver> drivers) {
-        this.drivers = drivers;
-    }
 
     public Car(){
     }
