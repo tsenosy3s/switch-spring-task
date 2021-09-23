@@ -2,6 +2,7 @@ package com.cars.service.services.drivers;
 
 import com.cars.service.entites.Driver;
 import com.cars.service.entites.Manufacturer;
+import com.cars.service.exceptions.CarAlreadyInUseException;
 import com.cars.service.models.drivers.DriverBody;
 import com.cars.service.models.drivers.DriverCarBody;
 import com.cars.service.models.manufacturers.ManufacturerBody;
@@ -18,7 +19,9 @@ public interface IDriverService {
 
     public Driver update(long id, DriverBody body) throws NotFoundException;
 
-    public Driver select(DriverCarBody body) throws NotFoundException;
+    public Driver select(DriverCarBody body) throws NotFoundException, CarAlreadyInUseException;
     public Driver deSelect(DriverCarBody body) throws NotFoundException;
+
+    public List<Driver> listWithCars();
 
 }
