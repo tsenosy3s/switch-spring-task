@@ -1,8 +1,8 @@
 # switch-spring-task
 
-PostMan Collection : https://www.getpostman.com/collections/4cf15ce3d873fb522ec8
+PostMan Collection : https://bit.ly/3lSCjcX
 
-Demo Video : https://drive.google.com/drive/folders/1OrAywVIR23ArEXVEt1lGmn_URegJ87WX?usp=sharing
+Demo Video : https://bit.ly/2ZgKvvQ
 
 
 Username: switch
